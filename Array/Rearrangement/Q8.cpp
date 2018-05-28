@@ -1,7 +1,6 @@
 //Minimum swaps required to bring all elements less than or equal to k together
 #include <iostream>
 using namespace std;
-
 int main()
 {
     int *arr,size,i,k,count=0,min,swap=0;

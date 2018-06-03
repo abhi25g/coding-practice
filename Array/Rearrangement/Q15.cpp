@@ -4,7 +4,7 @@
 using namespace std;
 int comp(string x, string y)
 {
-	return x.append(y).compare(y.append(x))?1:0;
+	return x.append(y).compare(y.append(x))>0?1:0;
 }
 int main()
 {
@@ -15,7 +15,7 @@ int main()
     arr=new string[size];
     cout<<"\nEnter the array ";
     for(i=0;i<size;i++)
-        getline(cin,arr[i]);
+    	cin>>arr[i];
     for(i=0;i<size;i++)
     {
     	for(j=0;j<size-i-1;j++)

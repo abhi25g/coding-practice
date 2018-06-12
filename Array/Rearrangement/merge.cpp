@@ -48,7 +48,7 @@ void ms(int *arr,int s,int e)
 }
 int main()
 {
-    int *arr,size,i,k,count=0,min,swap=0;
+    int *arr,size,i;
     cout<<"\nEnter the size of array ";
     cin>>size;
     arr=new int[size];

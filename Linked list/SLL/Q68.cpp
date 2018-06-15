@@ -63,9 +63,32 @@ node* ms(node *head)
 int main()
 {
 	ll l1;
+	node *md, *p1, *p2, *curr;
 	cout<<"\nEnter the linked list ";
 	l1.input();
-	l1.display(l1.head);
+	display(l1.head);
 	l1.head = ms(l1.head);
-	l1.display(l1.head);
+	display(l1.head);
+	md = middle(l1.head);
+	curr = l1.head;
+	p1 = curr->next;
+	p2 = reverse(md->next);
+	md->next = NULL;
+	while(curr)
+	{
+		curr->next = p2;
+		p2 = p2->next;
+		curr = curr->next;
+		if(!p1)
+		{
+			curr->next = NULL;
+			break;
+		}
+		curr->next = p1;
+		p1 = p1->next;
+		curr = curr->next;
+		if(!p2)
+			break;
+	}
+	display(l1.head);
 }

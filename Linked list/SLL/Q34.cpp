@@ -5,12 +5,8 @@ int main()
 {
 	ll l1, l2;
 	node *p1, *p2, *temp;
-	int i=1;
-	l1.att(5);
-	l1.att(6);
-	l1.att(7);
-	l1.att(8);
-	l1.display();
+	l1.input();
+	l1.display(l1.head);
 	p1 = l1.head;
 	p2 = p1->next;
 	l2.head = p2;
@@ -18,15 +14,18 @@ int main()
 	while(temp)
 	{
 		p1->next = temp;
+		p1 = p1->next;
 		temp = temp->next;
-		p2->next = temp;
 		if(!temp)
 			break;
-		p1 = p1->next;
+		p2->next = temp;
 		p2 = p2->next;
+		temp = temp->next;
 	}
-	p1->next = temp;
-	p2->next = temp;
-	l1.display();
-	l2.display();
+	if(p1)
+		p1->next = temp;
+	if(p2)
+		p2->next = temp;
+	l1.display(l1.head);
+	l2.display(l2.head);
 }
